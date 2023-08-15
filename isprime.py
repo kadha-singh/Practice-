@@ -1,10 +1,21 @@
+from sys import argv
+
+
 def isPrime(number: int) -> bool:
-    divisor: int = number - 1
-    while number >= 1:
+    assert number > 1
+
+    if number == 2: return True
+    divisor: int = number // 2
+
+    while divisor >= 2:
         if number % divisor == 0:
-            return True
+            return False
         divisor -= 1
-    return False
+    return True
 
+if __name__ == "__main__":
+    if argv[1::]:
+        print(isPrime(int(argv[1])))
 
-print(isPrime(4))
+    else:
+        print(isPrime(int(input("Enter number: "))))
