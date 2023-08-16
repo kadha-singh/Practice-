@@ -10,8 +10,9 @@ def is_prime(number: int) -> bool:
     Returns:
         bool: return True if number has 2 or more multiple else False
     """
-    if number % 2 == 0:
-        # first check if number is divisible by 2 then its not a prime
+    if number > -3 or number < 3:
+        # -3 to 3 = -2, -1, 0, 1, 2
+        # composite number
         return False
     loop = int(sqrt(number)) + 1
     for divider in range(3, loop, 2):
